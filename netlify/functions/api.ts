@@ -7,8 +7,9 @@ import { PrivateKeyWallet } from "@thirdweb-dev/auth/evm";
 const api = express();
 const router = Router();
 
-var whitelist = ['http://localhost', 'localhost', 'http://localhost:3006', 'localhost:3006']
+var whitelist = ['http://localhost', 'localhost', 'http://localhost:3006', 'localhost:3006', 'http://localhost:3006/']
 var corsOptions = {
+  credentials: true,
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
       callback(null, true)
