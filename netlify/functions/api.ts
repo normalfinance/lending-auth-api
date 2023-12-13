@@ -11,8 +11,10 @@ api.use(cors());
 router.use(cors());
 
 const { authRouter, authMiddleware, getUser } = ThirdwebAuth({
-  domain: process.env.THIRDWEB_AUTH_DOMAIN || "",
-  wallet: new PrivateKeyWallet(process.env.THIRDWEB_AUTH_PRIVATE_KEY || ""),
+  domain: "localhost",
+  wallet: new PrivateKeyWallet(
+    "12632ee39b5e32052f9b5d453d8b5f456da6dbc96c90a47e75a0ac7e1fcb8e88"
+  ),
 });
 
 router.get("/hello", (req, res) => res.send("Hello World!"));
