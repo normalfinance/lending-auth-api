@@ -14,10 +14,10 @@ const { authRouter, authMiddleware, getUser } = ThirdwebAuth({
 router.get("/hello", (req, res) => res.send("Hello World!"));
 
 // Add the auth router to our app to set up the /auth/* endpoints
-router.use("/auth", authRouter);
+// router.use("/auth", authRouter);
 
-// Add the auth middleware to the rest of our app to allow user authentication on other endpoints
-router.use(authMiddleware);
+// // Add the auth middleware to the rest of our app to allow user authentication on other endpoints
+// router.use(authMiddleware);
 
-app.use("/.netlify/functions/api", router);
+app.use("/api/", router);
 export const handler = serverless(app);
