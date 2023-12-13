@@ -8,6 +8,7 @@ const api = express();
 const router = Router();
 
 api.use(cors());
+router.use(cors());
 
 const { authRouter, authMiddleware, getUser } = ThirdwebAuth({
   domain: process.env.THIRDWEB_AUTH_DOMAIN || "",
