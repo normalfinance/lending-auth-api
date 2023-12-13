@@ -11,7 +11,7 @@ api.use(cors());
 router.use(cors());
 
 const { authRouter, authMiddleware, getUser } = ThirdwebAuth({
-  domain: "localhost",
+  domain: "localhost:3006",
   wallet: new PrivateKeyWallet(
     "12632ee39b5e32052f9b5d453d8b5f456da6dbc96c90a47e75a0ac7e1fcb8e88"
   ),
