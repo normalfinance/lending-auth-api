@@ -1,10 +1,13 @@
 import express, { Router } from "express";
 import serverless from "serverless-http";
+import cors from "cors";
 import { ThirdwebAuth } from "@thirdweb-dev/auth/express";
 import { PrivateKeyWallet } from "@thirdweb-dev/auth/evm";
 
 const api = express();
 const router = Router();
+
+api.use(cors());
 
 const { authRouter, authMiddleware, getUser } = ThirdwebAuth({
   domain: process.env.THIRDWEB_AUTH_DOMAIN || "",
