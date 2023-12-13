@@ -7,8 +7,20 @@ import { PrivateKeyWallet } from "@thirdweb-dev/auth/evm";
 const api = express();
 const router = Router();
 
-api.use(cors());
-router.use(cors());
+var whitelist = ['http://localhost', 'localhost', 'http://localhost:3006', 'localhost:3006']
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+
+
+api.use(cors(corsOptions));
+router.use(cors(corsOptions));
 
 const { authRouter, authMiddleware, getUser } = ThirdwebAuth({
   domain: "localhost:3006",
