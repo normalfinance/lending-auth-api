@@ -1,10 +1,18 @@
 {
-  "name": "passive-auth",
+  "name": "@normalfinance/lending-auth-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/normalfinance/lending-auth-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/normalfinance/lending-auth-api/issues"
+  },
+  "homepage": "https://github.com/normalfinance/lending-auth-api#readme",
   "dependencies": {
     "@netlify/functions": "^2.4.1",
     "@thirdweb-dev/auth": "^4.1.17",
